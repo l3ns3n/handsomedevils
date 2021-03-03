@@ -1,0 +1,319 @@
+// out: ../css/editor.css, sourcemap: false, compress: false
+@import url("_config.less");
+
+* {
+	margin: 0;
+	padding: 0;
+
+	&::-moz-selection {
+		color: @color-highlighted-bg;
+		background: @color-font-special;
+	}
+
+	&::selection {
+		color: @color-highlighted-bg;
+		background: @color-font-special;
+	}
+}
+
+body {
+	color: @body-fg-color;
+	font-family: @font-family-default;
+	font-size: @font-size-default;
+	font-weight: 400;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: top;
+
+	&.full-width {
+		width: 100%;
+	}
+
+	&.border {
+		box-sizing: border-box;
+	}
+}
+
+p {
+	line-height: @line-height-text;
+	margin-bottom: 20px;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid @color-font-special;
+	height: 1px;
+	clear: both;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+blockquote {
+	border-bottom: 1px solid @color-font-special;
+	border-top: 1px solid @color-font-special;
+	font-size: @font-size-default;
+	font-style: italic;
+	margin: 0 auto 1rem;
+	padding: 1rem 0 1rem 80px;
+    position: relative;
+
+	p {
+		clear: both;
+		font-size: @font-size-l;
+	}
+
+	cite {
+		font-size: @font-size-default;
+	}
+
+	&:before {
+		font-family: "Font Awesome 5 Pro";
+		font-size: 36px;
+		content: "\f10d";
+		color: @color-font-special;
+		position: absolute;
+	    left: 15px;
+	    top: 1rem;
+	}
+}
+
+/* ########## Headline ########## */
+
+h1,h2,h3,h4,h5,h6 {
+	color: @color-font-special;
+
+	a {
+		color: @body-fg-color;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+h1,
+.h1 {
+	font-family: @font-family-special;
+	font-size: 28px;
+	font-weight: 400;
+	margin-bottom: 20px;
+	letter-spacing: 10px;
+}
+
+h2,
+.h2 {
+	font-family: @font-family-special;
+	font-size: 22px;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+h3,
+.h3 {
+	font-family: @font-family-special;
+	font-size: 20px;
+	font-weight: 300;
+	margin-bottom: 5px;
+}
+
+h4,
+.h4 {
+	font-family: @font-family-special;
+	font-size: 18px;
+	font-weight: 300;
+	margin-bottom: 5px;
+}
+
+h5,
+.h5 {
+	font-family: @font-family-special;
+	font-size: 17px;
+	font-weight: 300;
+	margin-bottom: 5px;
+}
+
+h6,
+.h6 {
+	font-family: @font-family-special;
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+/* ########## List ########## */
+
+ul, ol {
+	margin-bottom: 20px;
+	padding-left: 20px;
+
+	> li {
+		margin-bottom: 5px;
+
+		a {
+			&:hover {
+				color: @body-fg-color;
+			}
+		}
+	}
+}
+
+ol {
+	padding-left: 15px;
+}
+
+ul.clean {
+
+	list-style: none;
+	margin-bottom: 0;
+	padding-left: 0;
+
+	ul {
+		list-style: none;
+	}
+}
+
+.list-default {
+	margin-bottom: 20px;
+	padding-left: 15px;
+
+	> li {
+		margin-bottom: 5px;
+
+		a {
+			&:hover {
+				color: @body-fg-color;
+			}
+		}
+	}
+}
+
+/* ########## Links ########## */
+
+a {
+	color: @color-font-special;
+	text-decoration: none;
+
+	img {
+		border: none;
+	}
+
+	&.link--special {
+		position: relative;
+		z-index: 1;
+
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background-color: @color-font-special;
+			transform-origin: bottom right;
+			transform: scaleX(0);
+			transition: transform 0.5s ease;
+		}
+
+		&:hover::before {
+			transform-origin: bottom left;
+			transform: scaleX(1);
+		}
+	}
+}
+
+.link--special {
+
+	& > a {
+		position: relative;
+		z-index: 1;
+
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background-color: @color-font-special;
+			transform-origin: bottom right;
+			transform: scaleX(0);
+			transition: transform 0.5s ease;
+		}
+
+		&:hover::before {
+			transform-origin: bottom left;
+			transform: scaleX(1);
+		}
+	}
+}
+
+/* ########## Button ########## */
+
+.btn {
+	background-color: transparent;
+	box-sizing: border-box;
+	border: 2px solid @color-font-special;
+	color: @color-font-special;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 100%;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+
+	&:hover {
+		color: @color-highlighted-bg;
+	}
+}
+
+.btn[disabled] {
+	border-color: @color-grey;
+	background-color: @color-grey;
+	cursor: not-allowed;
+}
+
+/* ########## Custom Styles ########## */
+
+.color-light {
+	color: #999;
+}
+
+.font-size-large {
+	font-size: 32px;
+}
+
+.font-size-s {
+	font-size: 14px;
+}
+
+.icon-box {
+	position: relative;
+	padding-left: 45px;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 34px;
+	}
+}
+
+.text-special {
+	color: @color-font-special !important;
+	font-weight: 700;
+}
+
+.no-text-decoration {
+	text-decoration: none;
+}
+
+@media screen and (max-width: @mobile-viewport-width) {
+	blockquote {
+		font-size: @font-size-default;
+	}
+}

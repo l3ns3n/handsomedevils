@@ -1,0 +1,38 @@
+// out: ../css/wp-login.css, sourcemap: false, compress: false
+@import url("_config.less");
+
+body {
+	background: @color-font-invert;
+}
+
+.login {
+
+	h1 {
+
+		a {
+			background-image: url("../images/screen/handsome-logo.png");
+			background-size: contain;
+			width: auto;
+			height: 120px;
+		}
+	}
+
+	#nav,
+	#backtoblog {
+		a {
+			color: @color-font-special;
+		}
+	}
+
+	.message {
+		border-left-color: @color-font-special;
+	}
+
+	&.wp-core-ui {
+		.button-primary {
+			background-color: @color-font-special;
+			border-color: @color-font-special;
+			text-shadow: none;
+		}
+	}
+}

@@ -1,0 +1,93 @@
+// out: ../css/media.css, sourcemap: false, compress: false
+@import url("_config.less");
+
+@media (min-width: 992px) {
+
+	#header {
+
+		.search-form {
+			display: block !important;
+		}
+	}
+
+	#toggle-buttons {
+		display: none;
+	}
+}
+
+@media (max-width: @tablet-viewport-width) {
+
+	#header {
+		height: auto;
+
+		.wrapper {
+			height: auto;
+		}
+
+		.custom-logo-link {
+			position: static;
+			top: auto;
+			left: auto;
+			width: 105px;
+			float: left;
+		}
+
+		.search-form {
+			position: relative;
+			top: auto;
+			right: auto;
+			margin-bottom: 15px;
+			display: none;
+		}
+	}
+
+	#header-inner {
+		height: auto;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+}
+
+@media (max-width: @mobile-landspace-viewport-width) {
+
+	#footer-bottom {
+		text-align: center;
+	}
+
+	#fnavi {
+		float: none;
+		padding-top: 20px;
+	}
+}
+
+@media (max-width: @mobile-viewport-width) {
+
+	#header-top,
+	#header-inner,
+	#main,
+	#footer,
+	#footer-bottom {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	table {
+
+		&.table-vertical {
+
+			td {
+				&.column-1 {
+					white-space: normal;
+				}
+			}
+		}
+
+		&.table-stretched {
+
+			.column-2,
+			.column-3 {
+				white-space: normal;
+			}
+		}
+	}
+}

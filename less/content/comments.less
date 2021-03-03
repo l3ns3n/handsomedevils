@@ -1,0 +1,64 @@
+// main: ../content.less
+
+#commentform {
+    .form-submit {
+        .submit {
+            background-color: transparent;
+        	box-sizing: border-box;
+        	border: 2px solid @color-font-special;
+        	color: @color-font-special;
+        	cursor: pointer;
+        	display: inline-block;
+        	line-height: 100%;
+        	padding: 10px 15px;
+        	text-align: center;
+        	text-decoration: none;
+
+        	&:hover {
+        		background-color: @color-highlighted-bg;
+        		color: @color-font-special;
+        	}
+        }
+    }
+}
+
+.comments {
+
+    .comment-body {
+        border: 1px solid @color-font-special;
+        border-radius: 7px;
+        margin-bottom: 1rem;
+        padding: 10px;
+    }
+
+    .post-comments {
+        margin-bottom: 50px;
+    }
+
+    .comment-content {
+    	color: @color-grey;
+    }
+
+    .comment-reply-title, {
+        .underline();
+    }
+
+    .post-comments,
+    .children {
+        list-style: none;
+    }
+}
+
+.comment-privacy-label {
+    margin-bottom: 32px;
+}
+
+.comments-wrapper {
+    margin-top: 50px;
+}
+
+.comment-respond {
+    .comment-reply-title, {
+        letter-spacing: 10px;
+    }
+}

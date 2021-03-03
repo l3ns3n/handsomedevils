@@ -1,0 +1,104 @@
+// out: ../css/form.css, sourcemap: false, compress: false
+@import url("_config.less");
+
+input, textarea, select, button {
+	border-radius: 0;
+	box-sizing: border-box;
+	color: @body-fg-color;
+	font-family: @font-family-default;
+	font-size: @font-size-default;
+	font-weight: 300;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+textarea {
+	resize: none;
+	height: 150px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+
+	&.required {
+		&:after {
+			content: " *";
+			color: #FF0000;
+		}
+	}
+}
+
+select,
+textarea,
+input[type="url"],
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="password"] {
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid @color-font-special;
+	padding: 10px;
+	width: 100%;
+
+	&:hover,
+	&:focus {
+		box-shadow: 1px 1px 2px @color-font-special;
+		appearance: none;
+		-webkit-appearance: none;
+	}
+}
+
+input[type="checkbox"] {
+
+	&:checked {
+		& + label::before {
+			content: '\f00c';
+		}
+	}
+
+	& + label {
+		padding-left: 34px;
+		position: relative;
+
+		&::before {
+			border: 1px solid @color-font-special;
+			cursor: pointer;
+			content: '';
+			font-family: "Font Awesome 5 Pro";
+			height: 26px;
+			left: 0px;
+			font-size: @font-size-l;
+			padding-left: 2px;
+			box-sizing: border-box;
+			top: 0;
+			position: absolute;
+			width: 26px;
+		}
+	}
+}
+
+textarea {
+	border: 1px solid @color-font-special;
+}
+
+.wpcf7-list-item {
+	input {
+		appearance: checkbox;
+		-webkit-appearance: checkbox;
+	}
+}

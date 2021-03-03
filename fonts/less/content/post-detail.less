@@ -1,0 +1,36 @@
+// main: ../content.less
+
+.post-detail {
+	&--avatar-wrapper {
+		.flex-box();
+		.flex-justify-content-space-between();
+		color: @color-font-special;
+		font-size: @font-size-l;
+		margin-bottom: 20px;
+	}
+
+	&--back-to-blog {
+		margin-bottom: @padding-bottom-default * 2;
+	}
+
+	&--category-link {
+		background-color: @color-font-special;
+		border-radius: 2px;
+		color: @color-highlighted-bg;
+		margin-right: 5px;
+		padding: 5px;
+	}
+
+	&--category-wrapper {
+		margin-bottom: 1rem;
+	}
+
+	&--title {
+		border-bottom: 1px solid @color-font-special;
+		padding-bottom: @padding-bottom-default;
+	}
+
+	&--inner-wrapper {
+		.flex-box;
+	}
+}

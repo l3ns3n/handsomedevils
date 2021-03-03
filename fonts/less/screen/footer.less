@@ -1,0 +1,101 @@
+// main: ../screen.less
+/* ########## Footer ########## */
+
+.footer {
+	background-color: @footer-bg-color;
+	color: @footer-fg-color;
+	font-size: @font-size-default;
+	padding: @footer-padding;
+	position: relative;
+
+	a {
+		color: @footer-fg-color;
+	}
+
+	.wpb_content_element {
+		h6 {
+			font-size: @font-size-xl;
+			letter-spacing: 2px;
+			text-transform: capitalize;
+		}
+	}
+
+	.footer-small {
+		font-size: @font-size-s;
+	}
+
+	.footer-table {
+		tr > td {
+			padding-right: 10px;
+		}
+	}
+
+	&--wrapper {
+		bottom: 0;
+		left: 0;
+		width: 100%;
+
+		&.fixed {
+			position: fixed;
+		}
+	}
+}
+
+/* ########## Footer Bottom ########## */
+
+.footer-bottom {
+	background-color: @footer-bottom-bg-color;
+	color: @footer-bottom-fg-color;
+	font-size: @footer-bottom-font-size;
+	padding: @footer-bottom-padding;
+	position: relative;
+	text-align: center;
+
+	.wrapper {
+		overflow: hidden;
+	}
+
+	a {
+		color: @footer-bottom-fg-color;
+	}
+}
+
+.footer-menu {
+	&--wrapper {
+		.flex-box();
+	}
+
+	&--item {
+		.flex-col-width(50%);
+
+		h6 {
+			border-bottom: 1px solid @color-font-special;
+			margin-bottom: 30px;
+			padding-bottom: @padding-bottom-default;
+		}
+	}
+
+	&--container {
+		div {
+			padding: 0 20px 40px;
+		}
+	}
+}
+
+.menu-footermenue-container {
+	ul {
+		list-style: none;
+	}
+}
+
+@media (max-width: @mobile-landspace-viewport-width) {
+	.footer-menu {
+		&--wrapper {
+			flex-direction: column;
+		}
+
+		&--item {
+			.flex-col-width(100%);
+		}
+	}
+}

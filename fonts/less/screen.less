@@ -1,0 +1,98 @@
+// out: ../css/screen.css, sourcemap: false, compress: false
+
+@import url("_config.less");
+@import "screen/big-teaser";
+@import "screen/footer";
+@import "screen/error-page";
+@import "screen/header";
+@import "screen/home";
+@import "screen/pagination";
+@import "screen/teaser";
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	background-color: @background-color-dark;
+}
+
+#page {
+	margin: 0 auto;
+}
+
+.wrapper {
+	max-width: @wrapper-max-width;
+	margin: 0 auto;
+	position: relative;
+}
+
+.wrapper-small {
+	max-width: @wrapper-small-width;
+	margin: 0 auto;
+	position: relative;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	height: 0;
+}
+
+.h-margin-big {
+	margin-bottom: @padding-bottom-big;
+}
+
+#toggle-buttons {
+	float: right;
+
+	li {
+		display: inline;
+		margin-left: 15px;
+	}
+
+	button {
+		font-size: 32px;
+		color: #333333;
+		line-height: 100%;
+
+		&.active {
+			color: @color-font-special;
+		}
+	}
+}
+
+/* ########## Main ########## */
+
+#main {
+	display: block;
+	background: @background-color-dark;
+	border-bottom: 1px solid @color-font-special;
+	box-sizing: border-box;
+	color: @color-font-default;
+	padding: @main-padding;
+	position: relative;
+	width: 100%;
+	z-index: 10;
+}
+
+
+// cookie banner
+@media screen and (max-width: @tablet-viewport-width) {
+	#cookie-notice {
+
+		.cn-button {
+			margin-bottom: 10px !important;
+		}
+	}
+}

@@ -1,0 +1,62 @@
+// main: ../screen.less
+
+.big-teaser {
+    &__item {
+        .flex-col-width(50%);
+        box-sizing: border-box;
+        padding: 0 25px;
+    }
+
+    &__image {
+        -webkit-filter: invert(40%) grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-420deg) saturate(400%) contrast(2);
+      	filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-42deg) saturate(600%) contrast(.5);
+		height: auto;
+        transition: filter .3s ease-in-out;
+		width: 100%;
+
+        &:hover {
+            -webkit-filter: none;
+          	filter: none;
+        }
+    }
+
+    &__link {
+        display: block;
+        position: relative;
+    }
+
+    &__title {
+        background-color: rgba(255, 255, 255, 0.8);
+		bottom: -5px;
+		box-sizing: border-box;
+        color: @color-font-invert;
+        font-size: @font-size-xl;
+		left: 0;
+		padding: 15px 20px;
+		position: absolute;
+		width: 100%;
+    }
+
+    &__wrapper {
+        .flex-box();
+        .prefix(flex-wrap, wrap);
+        margin: 0 -25px @padding-bottom-big;
+    }
+}
+
+@media screen and (max-width: @tablet-landspace-viewport-width) {
+    .big-teaser {
+        &__item {
+            .flex-col-width(100%);
+            margin-bottom: @padding-bottom-default;
+        }
+
+        &__title {
+            font-size: @font-size-l;
+        }
+
+        &__wrapper {
+            margin-bottom: 0;
+        }
+    }
+}

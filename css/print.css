@@ -1,0 +1,12 @@
+body {
+  background-color: #FFFFFF;
+}
+#header-top,
+#header,
+#header-image,
+#hnavi,
+#breadcrumb,
+#footer,
+#footer-bottom {
+  display: none;
+}
