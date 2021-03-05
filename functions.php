@@ -1,7 +1,6 @@
 <?php
 
-function lm_setup_theme()
-{
+function lm_setup_theme() {
 	load_theme_textdomain('handsome', get_template_directory() . '/languages');
 
 	add_theme_support('title-tag');
@@ -43,31 +42,20 @@ function lm_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'lm_custom_excerpt_length', 50 );
 
-
-
-function lm_enqueue_scripts()
-{
-    wp_enqueue_style('cs-font-style', get_stylesheet_uri());
-    wp_enqueue_style('cs-font-awesome-5', get_theme_file_uri('/css/fontawesome-all.min.css'));
-    wp_enqueue_style('cs-font-fancybox', get_theme_file_uri('/css/fancybox.css'));
-    wp_enqueue_style('cs-css-slick', get_theme_file_uri('/css/slick.css'));
-    wp_enqueue_style('cs-font-editor', get_theme_file_uri('/css/editor.css'));
-    wp_enqueue_style('cs-font-form', get_theme_file_uri('/css/form.css'));
-    wp_enqueue_style('cs-font-media', get_theme_file_uri('/css/media.css'));
-    wp_enqueue_style('cs-font-navigation', get_theme_file_uri('/css/navigation.css'));
-    wp_enqueue_style('cs-font-screen', get_theme_file_uri('/css/screen.css'));
-    wp_enqueue_style('cs-font-content', get_theme_file_uri('/css/content.css'));
+function lm_enqueue_scripts() {
+    wp_enqueue_style('handsome-font-style', get_stylesheet_uri());
+    wp_enqueue_style('handsome-font-awesome-5', get_theme_file_uri('/css/fontawesome-all.min.css'));
+    wp_enqueue_style('handsome-css-slick', get_theme_file_uri('/css/slick.css'));
+    wp_enqueue_style('handsome-all-styles', get_theme_file_uri('/css/all.css'));
 
 	// Javascript
 	wp_enqueue_script('jquery');
-    wp_enqueue_script('cs-slick', get_theme_file_uri('/js/slick.min.js'), array(), false, true);
-    wp_enqueue_script('cs-font-fancybox', get_theme_file_uri('/js/fancybox.js'), array(), false, true);
-    wp_enqueue_script('cs-font-main', get_theme_file_uri('/js/main.js'), array(), false, true);
+    wp_enqueue_script('handsome-slick', get_theme_file_uri('/js/slick.min.js'), array(), false, true);
+    wp_enqueue_script('handsome-script-main', get_theme_file_uri('/js/main.js'), array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'lm_enqueue_scripts');
 
-function lm_widgets_init()
-{
+function lm_widgets_init() {
 	register_sidebar(array(
 		'name'          => __('Sidebar', 'handsome'),
 		'id'            => 'sidebar-default',
@@ -98,39 +86,37 @@ function lm_widgets_init()
 add_action('widgets_init', 'lm_widgets_init');
 
 // styling the backend login page
-function cs_wp_login_css() {
+function handsome_wp_login_css() {
 	wp_enqueue_style('cs-style-wp-login', get_theme_file_uri('/css/wp-login.css', array(), ''));
 }
-add_action('login_enqueue_scripts', 'cs_wp_login_css');
+add_action('login_enqueue_scripts', 'handsome_wp_login_css');
 
-function lm_wp_login_logo_url($url) {
+function handsome_wp_login_logo_url($url) {
 
 	return get_bloginfo('url');
 }
-add_filter('login_headerurl', 'lm_wp_login_logo_url');
+add_filter('login_headerurl', 'handsome_wp_login_logo_url');
 
-add_filter('comment_form_default_fields', 'cs_unset_url_field');
-function cs_unset_url_field($fields){
+function handsome_unset_url_field($fields){
     if(isset($fields['url']))
        unset($fields['url']);
        return $fields;
 }
+add_filter('comment_form_default_fields', 'handsome_unset_url_field');
 
-function remove_comment_ip()
-{
-return "127.0.0.1";
+function remove_comment_ip() {
+	return "127.0.0.1";
 }
 add_filter( 'pre_comment_user_ip', 'remove_comment_ip', 50);
 
-add_filter( 'comment_form_field_comment', 'my_comment_form_field_comment' );
-function my_comment_form_field_comment( $comment_field )
-{
-return $comment_field.
-'<input type="checkbox" id="comment-privacy" name="comment-privacy" value="privacy-key" class="privacyBox" aria-req="true">
-<label for="comment-privacy" class="comment-privacy-label">Ich akzeptiere, dass meine Daten für die korrekte Funktionsweise der Website gespeichert werden.</label>';
+function my_comment_form_field_comment( $comment_field ) {
+	return $comment_field.
+	'<input type="checkbox" id="comment-privacy" name="comment-privacy" value="privacy-key" class="privacyBox" aria-req="true">
+	<label for="comment-privacy" class="comment-privacy-label">Ich akzeptiere, dass meine Daten für die korrekte Funktionsweise der Website gespeichert werden.</label>';
 }
-add_action('wp_footer','valdate_privacy_comment_javascript');
-function valdate_privacy_comment_javascript(){
+add_filter( 'comment_form_field_comment', 'my_comment_form_field_comment' );
+
+function valdate_privacy_comment_javascript() {
     if (is_single() && comments_open()){
         wp_enqueue_script('jquery');
         ?>
@@ -148,17 +134,20 @@ function valdate_privacy_comment_javascript(){
         <?php
     }
 }
-add_filter( 'preprocess_comment', 'verify_comment_privacy' );
+add_action('wp_footer','valdate_privacy_comment_javascript');
+
 function verify_comment_privacy( $commentdata ) {
     if ( ! isset( $_POST['privacy'] ) )
         wp_die( __( 'Bitte akzeptieren Sie die Checkbox.' ) );
 
     return $commentdata;
 }
-add_action( 'comment_post', 'save_comment_privacy' );
+add_filter( 'preprocess_comment', 'verify_comment_privacy' );
+
 function save_comment_privacy( $comment_id ) {
     add_comment_meta( $comment_id, 'privacy', $_POST[ 'privacy' ] );
 }
+add_action( 'comment_post', 'save_comment_privacy' );
 
 // remove default tablepress css
 add_filter('tablepress_use_default_css', '__return_false');

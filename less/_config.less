@@ -24,31 +24,36 @@
 @line-height-text: 160%;
 
 // Colors
+@color-dark: #031424;
+@color-special: #cf6766;
+@color-special-alternative: #f4cd78;
+@color-light: #fff;
+@color-grey: #ddd;
+
 // bg
-@background-color-dark: #031424;
-@background-color-special: #f4cd78;
-@background-color-light: #fff;
+@background-color-dark: @color-dark;
+@background-color-special: @color-special-alternative;
+@background-color-light: @color-light;
 @body-fg-color: @color-font-default;
 
 // font
-@color-font-special: #cf6766;
-@color-font-invert: #031424;
-@color-font-alternative: #f4cd78;
-@color-grey: #ddd;
-@color-font-default: #fff;
-@color-highlighted-bg: #fff;
+@color-font-special: @color-special;
+@color-font-invert: @color-dark;
+@color-font-alternative: @color-special-alternative;
+@color-font-default: @color-light;
+@color-highlighted-bg: @color-light;
 
 @header-top-bg-color: @background-color-dark;
 @header-top-fg-color: @color-font-special;
 @header-top-font-size: @font-size-default;
 @header-top-padding: 10px 30px;
 
-@header-bg-color: #fff;
-@header-fg-color: #000;
+@header-bg-color: @color-light;
+@header-fg-color: @color-dark;
 @header-padding: 30px 30px 0 30px;
 @header-height: 49px;
 
-@hnavi-bg-color: #cf6766;
+@hnavi-bg-color: @color-special;
 @hnavi-fg-color: @color-font-invert;
 @hnavi-active-bg-color: @color-font-invert;
 @hnavi-active-fg-color: @color-font-special;

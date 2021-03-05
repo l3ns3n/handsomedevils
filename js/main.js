@@ -15,13 +15,6 @@ jQuery('.js-toggle-search').on('click', function(){
    	jQuery('#header .search-form').slideToggle();
 });
 
-/* lightbox */
-jQuery('a[rel="lightbox"]').fancybox({
-	padding: 10,
-	margin: 15,
-	maxWidth: 900
-});
-
 /* scroll to */
 function initScrollTo() {
 	jQuery('.js-scrollto').on('click', function(){
