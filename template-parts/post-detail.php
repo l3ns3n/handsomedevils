@@ -1,8 +1,8 @@
 <h1 class="post-detail--title"><?php the_title(); ?></h1>
 
 <div class="post-detail--avatar-wrapper">
-    <div class="post-detail--avatar-name"><i class="fas fa-pencil-alt"></i> verfasst von <?php echo the_author_meta('first_name'); ?></div>
-    <div class="post-detail--date"><i class="far fa-clock"></i> <?php the_time(get_option('date_format')); ?></div>
+    <div class="post-detail--avatar-name"><i class="fas fa-pencil-alt margin-right-s"></i> verfasst von <?php echo the_author_meta('first_name'); ?></div>
+    <div class="post-detail--date"><i class="far fa-clock margin-right-s"></i> <?php the_time(get_option('date_format')); ?></div>
 </div>
 <?php
     $categories = get_the_category();
