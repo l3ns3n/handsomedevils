@@ -8,13 +8,13 @@ get_header();
 	<div class="wrapper">
 		<?php get_template_part('template-parts/teaser'); ?>
 
-		<section class="wrapper-small h-margin-big">
+		<section class="wrapper-small">
 			<?php the_content(); ?>
 		</section>
 
+		<?php get_template_part('template-parts/icon-wrapper'); ?>
+
 		<?php get_template_part('template-parts/big-teaser'); ?>
-
-
 	</div>
 </main>
 

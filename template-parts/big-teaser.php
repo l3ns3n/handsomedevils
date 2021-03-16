@@ -3,7 +3,7 @@
         $postIds = [];
         array_push($postIds, get_theme_mod("lm_customizer_setting_frontpage"), get_theme_mod("lm_customizer_setting_frontpage_two"));
     ?>
-
+    
         <h2 class="h1 align-center">
             <?php
                 if (get_theme_mod("lm_customizer_setting_frontpage_title")) {
