@@ -48,7 +48,7 @@
 		<div class="wrapper">
 			<?php if (has_custom_logo()) {echo the_custom_logo();} ?>
 
-			<a href="<?php echo home_url(); ?>" class="header-bottom--mobile-link">
+			<a href="<?php echo home_url(); ?>" class="header-bottom--mobile-link js-header-mobile-title">
 				<?php _e('Handsome Devils', 'handsome'); ?>
 			</a>
 

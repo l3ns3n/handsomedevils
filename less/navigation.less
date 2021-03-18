@@ -210,11 +210,16 @@
 	#hnavi {
 		background-color: @background-color-light;
 		box-sizing: border-box;
-		display: none;
+		display: block;
 		position: absolute;
 		padding: 20px;
-		right: 0;
+		right: -300px;
 		top: 100%;
+		transition: right 300ms ease-in;
+
+		&.active {
+			right: 0;
+		}
 	}
 
 	#hnavi-menu {
@@ -226,10 +231,6 @@
 
 		> li {
 			position: relative;
-
-			&:last-of-type {
-				border-top: 1px solid @color-grey;
-			}
 
 			> a {
 				display: block;

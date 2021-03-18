@@ -1,6 +1,6 @@
 <?php if (is_active_sidebar('pre-footer-sidebar')) { ?><div><?php dynamic_sidebar('pre-footer-sidebar'); ?></div><?php } ?>
 
-<footer class="footer--wrapper">
+<footer class="footer--wrapper js-footer-wrapper">
     <div class="footer">
         <div class="wrapper">
             <div class="footer-menu--wrapper">

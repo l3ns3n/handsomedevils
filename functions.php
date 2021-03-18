@@ -45,12 +45,9 @@ add_filter( 'excerpt_length', 'lm_custom_excerpt_length', 50 );
 function lm_enqueue_scripts() {
     wp_enqueue_style('handsome-font-style', get_stylesheet_uri());
     wp_enqueue_style('handsome-font-awesome-5', get_theme_file_uri('/css/fontawesome-all.min.css'));
-    wp_enqueue_style('handsome-css-slick', get_theme_file_uri('/css/slick.css'));
     wp_enqueue_style('handsome-all-styles', get_theme_file_uri('/css/all.css'));
 
-	// Javascript
-	wp_enqueue_script('jquery');
-    wp_enqueue_script('handsome-slick', get_theme_file_uri('/js/slick.min.js'), array(), false, true);
+    wp_enqueue_script('handsome-slider', get_theme_file_uri('/js/tiny-slider.js'), array(), false, true);
     wp_enqueue_script('handsome-script-main', get_theme_file_uri('/js/main.js'), array(), false, true);
 }
 add_action('wp_enqueue_scripts', 'lm_enqueue_scripts');
