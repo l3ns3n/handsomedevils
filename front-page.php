@@ -4,7 +4,7 @@ get_header();
 
 <?php while (have_posts()) : the_post(); ?>
 
-<main id="main">
+<main>
 	<div class="wrapper">
 		<?php get_template_part('template-parts/teaser'); ?>
 

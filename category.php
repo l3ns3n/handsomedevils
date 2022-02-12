@@ -10,7 +10,7 @@ if (get_theme_mod( 'lm_customizer_setting_category_header_image' )) {
 </div>
 <?php } ?>
 
-<main id="main">
+<main>
 <div class="wrapper">
 
 <h1 class="category--title"><?php the_archive_title(); ?></h1>

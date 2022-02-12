@@ -7,7 +7,7 @@ get_header();
             <div class="header--bg-image-wrapper js-adjust-header-image"><?php the_post_thumbnail('blog-detail', array('class' => 'header--bg-image')); ?></div>
 	<?php } ?>
 
-<main id="main">
+<main>
 	<article class="wrapper-small">
 
         <?php get_template_part('template-parts/post-detail'); ?>

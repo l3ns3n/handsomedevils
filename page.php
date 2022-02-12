@@ -19,7 +19,7 @@ if (has_post_thumbnail()) {
 
 <?php get_template_part('template-parts/breadcrumb'); ?>
 
-<main id="main">
+<main>
 	<div class="wrapper">
 		<?php the_content(); ?>
 	</div>

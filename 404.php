@@ -6,7 +6,7 @@ get_header();
 	<div class="header--bg-image-wrapper js-adjust-header-image"><?php the_post_thumbnail('blog-detail', array('class' => 'header--bg-image')); ?></div>
 <?php } ?>
 
-<main id="main">
+<main>
 	<div class="wrapper">
 		<h1 class="page-title"><?php _e('Ohhhh, what a day.', 'handsome'); ?></h1>
 		<div class="page-content">

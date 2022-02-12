@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<main id="main">
+<main>
 <div class="wrapper">
 
 <?php if (get_option('page_for_posts')) { ?>

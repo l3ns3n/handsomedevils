@@ -2,17 +2,17 @@
 // adjust margin to fixed footer
 function adjustMarginToFooter() {
 	let footerWrapper = document.querySelector('.js-footer-wrapper');
-	const FOOTER_HEIGHT = footerWrapper.offsetHeight; 
-	const MAIN = document.getElementById('main');
+	const FOOTER_HEIGHT = footerWrapper.offsetHeight;
+	const MAIN = document.querySelector('main');
 	MAIN.style.marginBottom = FOOTER_HEIGHT + 'px';
 }
 
 function fixFooterDependingOnScrollPosition() {
-	const MAIN = document.getElementById('main');
+	const MAIN = document.querySelector('main');
 	const MAIN_OFFSETTOP = MAIN.offsetTop;
 	const MAIN_HEIGHT = MAIN.offsetHeight;
 	const WINDOW_HEIGHT = window.innerHeight;
-	const WINDOW_OFFSET = window.pageYOffset; 
+	const WINDOW_OFFSET = window.pageYOffset;
 	let footerWrapper = document.querySelector('.js-footer-wrapper');
 
 	if ((WINDOW_HEIGHT + WINDOW_OFFSET) > (MAIN_OFFSETTOP + MAIN_HEIGHT)) {
@@ -60,7 +60,7 @@ function initDetailSlider() {
 			items: 2,
 			gutter: 15,
 			slideBy: 2,
-			autoplay: false, 
+			autoplay: false,
 			controls: false,
 			nav: true,
 			navPosition: 'bottom',
