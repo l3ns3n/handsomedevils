@@ -15,15 +15,13 @@
         	text-decoration: none;
 
         	&:hover {
-        		background-color: @color-highlighted-bg;
-        		color: @color-font-special;
+        		color: @color-highlighted-bg;
         	}
         }
     }
 }
 
 .comments {
-
     .comment-body {
         border: 1px solid @color-font-special;
         border-radius: 7px;
@@ -49,8 +47,18 @@
     }
 }
 
-.comment-privacy-label {
-    margin-bottom: 32px;
+.comment-privacy {
+    &__label {
+        cursor: pointer;
+        margin-bottom: 32px;
+    }
+
+    &__message {
+        color: @color-font-special;
+        display: none;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
 }
 
 .comments-wrapper {

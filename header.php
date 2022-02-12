@@ -3,7 +3,6 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="format-detection" content="telephone=no">
 	<meta name="theme-color" content="#cf6766">
 	<?php wp_head(); ?>
 </head>
@@ -72,8 +71,6 @@
 				));
 			}
 			?>
-
-			<!-- <a href="javascript:;" class="header__search js-open-search"><i class="fas fa-search"></i></a> -->
 		</div>
 	</div>
 </header>

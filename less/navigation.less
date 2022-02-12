@@ -4,7 +4,6 @@
 /* ########## Main Navigation ########## */
 
 @media (min-width: 992px) {
-
 	#hnavi {
 		background-color: @background-color-light;
 		bottom: 0;
@@ -163,15 +162,10 @@
 	}
 
 	#header-inner {
-
 		&.fixed {
-
 			#hnavi-menu {
-
 				> li {
-
 					&.current-menu-item {
-
 						> a {
 							background-color: transparent;
 							color: @body-fg-color;
@@ -179,7 +173,6 @@
 					}
 
 					&.special {
-
 						> a {
 							background-color: transparent;
 						}
@@ -212,13 +205,13 @@
 		box-sizing: border-box;
 		display: block;
 		position: absolute;
-		padding: 20px;
+		padding: 20px 30px;
 		right: -300px;
 		top: 100%;
 		transition: right 300ms ease-in;
 
 		&.active {
-			right: 0;
+			right: -30px;
 		}
 	}
 

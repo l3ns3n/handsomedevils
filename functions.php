@@ -89,7 +89,6 @@ function handsome_wp_login_css() {
 add_action('login_enqueue_scripts', 'handsome_wp_login_css');
 
 function handsome_wp_login_logo_url($url) {
-
 	return get_bloginfo('url');
 }
 add_filter('login_headerurl', 'handsome_wp_login_logo_url');
@@ -109,24 +108,28 @@ add_filter( 'pre_comment_user_ip', 'remove_comment_ip', 50);
 function my_comment_form_field_comment( $comment_field ) {
 	return $comment_field.
 	'<input type="checkbox" id="comment-privacy" name="comment-privacy" value="privacy-key" class="privacyBox" aria-req="true">
-	<label for="comment-privacy" class="comment-privacy-label">Ich akzeptiere, dass meine Daten für die korrekte Funktionsweise der Website gespeichert werden.</label>';
+	<label for="comment-privacy" class="comment-privacy__label">Ich akzeptiere, dass meine Daten für die korrekte Funktionsweise der Website gespeichert werden.</label>
+	<div class="comment-privacy__message">Sie müssen erst die Datenschutzbestimmungen akzeptieren, um einen Kommentar zu senden.</div>';
 }
 add_filter( 'comment_form_field_comment', 'my_comment_form_field_comment' );
 
 function valdate_privacy_comment_javascript() {
     if (is_single() && comments_open()){
-        wp_enqueue_script('jquery');
         ?>
         <script type="text/javascript">
-        jQuery(document).ready(function($){
-            $("#submit").click(function(e){
-                if (!$('.privacyBox').prop('checked')){
-                    e.preventDefault();
-                    $('.comment-form-cookies-consent').after('Sie müssen die Datenschutz-Checkbox anhaken.');
+		document.addEventListener('DOMContentLoaded', function() {
+			const SUBMIT_BUTTON = document.querySelector('#commentform #submit');
+			const PRIVACY_LABEL = document.querySelector('.comment-privacy__message');
+			const PRIVACY_BOX = document.querySelector('.privacyBox');
+
+			SUBMIT_BUTTON.addEventListener('click', (e) => {
+				if (!PRIVACY_BOX.checked) {
+					e.preventDefault();
+					PRIVACY_LABEL.classList.add('show');
                     return false;
-                }
-            })
-        });
+				}
+			});
+		});
         </script>
         <?php
     }
@@ -134,9 +137,6 @@ function valdate_privacy_comment_javascript() {
 add_action('wp_footer','valdate_privacy_comment_javascript');
 
 function verify_comment_privacy( $commentdata ) {
-    if ( ! isset( $_POST['privacy'] ) )
-        wp_die( __( 'Bitte akzeptieren Sie die Checkbox.' ) );
-
     return $commentdata;
 }
 add_filter( 'preprocess_comment', 'verify_comment_privacy' );

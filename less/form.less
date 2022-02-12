@@ -23,12 +23,6 @@ button::-moz-focus-inner {
 	padding: 0;
 }
 
-textarea {
-	border: 1px solid @color-font-special;
-	height: 150px;
-	resize: none;
-}
-
 label {
 	display: block;
 	margin-bottom: 5px;
@@ -42,7 +36,6 @@ label {
 }
 
 select,
-textarea,
 input[type="url"],
 input[type="text"],
 input[type="email"],
@@ -61,6 +54,20 @@ input[type="password"] {
 		box-shadow: 1px 1px 2px @color-font-special;
 		appearance: none;
 		-webkit-appearance: none;
+	}
+}
+
+textarea {
+	border: none;
+	border-bottom: 1px solid @color-font-special;
+	background-color: transparent;
+	height: 150px;
+	resize: none;
+	width: 100%;
+
+	&:hover,
+	&:focus {
+		border-bottom-width: 2px;
 	}
 }
 
