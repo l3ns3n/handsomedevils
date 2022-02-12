@@ -57,7 +57,6 @@
 
 			<?php
 			if (has_nav_menu('hnavi')) {
-
 				wp_nav_menu(array(
 					'theme_location' => 'hnavi',
 					'container' => 'nav',
@@ -67,7 +66,6 @@
 					'menu_class' => 'clean clearfix',
 					'link_before' => '<span>',
 					'link_after' => '</span>',
-					'after' => '<i class="fa fa-plus js-toggle-sub-menu"></i>'
 				));
 			}
 			?>

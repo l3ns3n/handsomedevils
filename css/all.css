@@ -827,7 +827,6 @@ input[type="checkbox"] + label::before {
   #hnavi {
     background-color: #fff;
     bottom: 0;
-    display: block !important;
     left: 0;
     right: 0;
     position: relative;
@@ -836,16 +835,9 @@ input[type="checkbox"] + label::before {
   #hnavi .menu-item:first-of-type > a {
     padding-left: 0;
   }
-  .fixed #hnavi-menu .icon-home.current-menu-item a:before {
-    color: #031424;
-  }
-  #hnavi-menu .fa-plus,
-  #hnavi-menu .fa-minus {
-    display: none;
-  }
   #hnavi-menu > li {
+    display: inline-block;
     font-size: 20px;
-    float: left;
     position: relative;
   }
   #hnavi-menu > li:before {
@@ -860,7 +852,7 @@ input[type="checkbox"] + label::before {
   #hnavi-menu > li:first-child:before {
     display: none;
   }
-  #hnavi-menu > li > a {
+  #hnavi-menu > li a {
     box-sizing: border-box;
     display: block;
     padding: 12px 20px;
@@ -869,73 +861,19 @@ input[type="checkbox"] + label::before {
     letter-spacing: 10px;
     text-decoration: none;
   }
-  #hnavi-menu > li > a:hover {
+  #hnavi-menu > li a:hover {
     color: #cf6766;
-  }
-  #hnavi-menu > li.menu-item-has-children > a:after {
-    content: "\f107";
-    font-family: "FontAwesome";
-    margin-left: 8px;
-    font-size: 14px;
-  }
-  #hnavi-menu > li.special:before {
-    display: none;
-  }
-  #hnavi-menu > li.special > a {
-    background-color: #EEEEEE;
-  }
-  #hnavi-menu > li.last {
-    float: right;
   }
   #hnavi-menu > li.current-menu-item {
     z-index: 1;
   }
-  #hnavi-menu > li.current-menu-item > a {
+  #hnavi-menu > li.current-menu-item a {
     background-color: #fff;
     color: #cf6766;
   }
-  #hnavi-menu > li.current-menu-item.icon-mail > a:before {
-    color: #FFFFFF;
-  }
-  #hnavi-menu > li > ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #FFFFFF;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-  }
-  #hnavi-menu > li > ul > li {
-    border-top: 1px solid #EEEEEE;
-    white-space: nowrap;
-  }
-  #hnavi-menu > li > ul > li:first-child {
-    border-top: none;
-  }
-  #hnavi-menu > li > ul > li > a {
-    display: block;
-    padding: 12px 20px;
-    font-size: 14px;
-    color: #031424;
-    text-decoration: none;
-  }
-  #hnavi-menu > li > ul > li > a:hover {
-    background-color: #031424;
-    color: #cf6766;
-  }
-  #hnavi-menu > li > ul > li.current-menu-item > a {
-    background-color: #031424;
-    color: #cf6766;
-  }
-  #hnavi-menu > li:hover > ul {
-    display: block;
-  }
-  #header-inner.fixed #hnavi-menu > li.current-menu-item > a {
+  #header-inner.fixed #hnavi-menu > li.current-menu-item a {
     background-color: transparent;
     color: #fff;
-  }
-  #header-inner.fixed #hnavi-menu > li.special > a {
-    background-color: transparent;
   }
   #header-inner.fixed #hnavi-menu > li.last {
     margin-left: 0;
@@ -962,14 +900,10 @@ input[type="checkbox"] + label::before {
   #hnavi.active {
     right: -30px;
   }
-  #hnavi-menu .fa-plus,
-  #hnavi-menu .fa-minus {
-    display: none;
-  }
-  #hnavi-menu > li {
+  #hnavi-menu li {
     position: relative;
   }
-  #hnavi-menu > li > a {
+  #hnavi-menu li > a {
     display: block;
     padding: 12px 0;
     color: #031424;
@@ -978,9 +912,8 @@ input[type="checkbox"] + label::before {
     text-decoration: none;
     text-align: right;
   }
-  #hnavi-menu > li.current-menu-parent > a,
-  #hnavi-menu > li.current-menu-item > a {
-    color: #031424;
+  #hnavi-menu li.current-menu-item > a {
+    color: #cf6766;
   }
 }
 .big-teaser__item {
