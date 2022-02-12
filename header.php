@@ -18,7 +18,7 @@
 				    $mediaId = get_theme_mod("lm_customizer_setting_logo_image");
 				    $mediaSrc = wp_get_attachment_image_src($mediaId, 'full');
 
-				    echo '<img class="header-top--logo lazyload" alt="Handsome Devils" src="' . $mediaSrc[0] . '">';
+				    echo '<img class="header-top--logo lazyload" alt="Handsome Devils" data-src="' . $mediaSrc[0] . '">';
 				} ?>
 				<a href="<?php echo home_url(); ?>" class="header-top--logo-link link--special"><?php echo __('Handsome Devils', 'handsome'); ?></a>
 

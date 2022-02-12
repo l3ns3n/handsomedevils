@@ -26,9 +26,12 @@ function fixFooterDependingOnScrollPosition() {
 function initReopenCookieLayer() {
 	const COMPLIANZ_COOKIE_TRIGGER = document.querySelector('.js-open-complianz-modal');
 	const COMPLIANZ_COOKIE_MODAL = document.querySelector('.cc-revoke');
+	console.log(COMPLIANZ_COOKIE_TRIGGER);
+	console.log(COMPLIANZ_COOKIE_MODAL);
 
 	if (COMPLIANZ_COOKIE_TRIGGER && COMPLIANZ_COOKIE_MODAL) {
 		COMPLIANZ_COOKIE_TRIGGER.addEventListener('click', function() {
+			console.log('click');
 			COMPLIANZ_COOKIE_MODAL.click();
 		});
 	}
@@ -51,31 +54,35 @@ function initMobileMenuTrigger() {
 }
 
 function initDetailSlider() {
-	let slider = tns({
-		container: '.js-detail-teaser-slider',
-		items: 2,
-		gutter: 15,
-		slideBy: 2,
-		autoplay: false, 
-		controls: false,
-		nav: true,
-		navPosition: 'bottom',
-		autoplayButton: false,
-		autoplayButtonOutput: false,
-		autoHeight: true,
-		mouseDrag: true,
-		responsive: {
-			600: {
-				items: 3,
-				slideBy: 3,
-			},
-		}
-	});
+	if (document.querySelector('.js-detail-teaser-slider')) {
+		let slider = tns({
+			container: '.js-detail-teaser-slider',
+			items: 2,
+			gutter: 15,
+			slideBy: 2,
+			autoplay: false, 
+			controls: false,
+			nav: true,
+			navPosition: 'bottom',
+			autoplayButton: false,
+			autoplayButtonOutput: false,
+			autoHeight: true,
+			mouseDrag: true,
+			responsive: {
+				600: {
+					items: 3,
+					slideBy: 3,
+				},
+			}
+		});
+	}
 }
 
 // Vanilla
 document.addEventListener('DOMContentLoaded', function() {
-	initReopenCookieLayer();
+	setTimeout(function() {
+		initReopenCookieLayer();
+	}, 300);
 
 	initMobileMenuTrigger();
 
@@ -115,4 +122,4 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
         }
 	});
-})
+});
