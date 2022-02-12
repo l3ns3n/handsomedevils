@@ -26,12 +26,9 @@ function fixFooterDependingOnScrollPosition() {
 function initReopenCookieLayer() {
 	const COMPLIANZ_COOKIE_TRIGGER = document.querySelector('.js-open-complianz-modal');
 	const COMPLIANZ_COOKIE_MODAL = document.querySelector('.cc-revoke');
-	console.log(COMPLIANZ_COOKIE_TRIGGER);
-	console.log(COMPLIANZ_COOKIE_MODAL);
 
 	if (COMPLIANZ_COOKIE_TRIGGER && COMPLIANZ_COOKIE_MODAL) {
 		COMPLIANZ_COOKIE_TRIGGER.addEventListener('click', function() {
-			console.log('click');
 			COMPLIANZ_COOKIE_MODAL.click();
 		});
 	}

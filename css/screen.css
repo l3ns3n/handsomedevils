@@ -264,9 +264,6 @@
   position: relative;
   z-index: 10;
 }
-#header-top .fa {
-  margin-right: 8px;
-}
 /* ########## Header ########## */
 .header-top--wrapper {
   -webkit-align-items: center;
@@ -323,6 +320,10 @@
 #header .wrapper {
   height: 100%;
 }
+#header .custom-logo {
+  height: 100%;
+  width: 25%;
+}
 #header .custom-logo-link {
   position: absolute;
   top: 0;
@@ -331,10 +332,6 @@
 #header .fixed .custom-logo {
   height: 100%;
   width: 50%;
-}
-#header .custom-logo {
-  height: 100%;
-  width: 25%;
 }
 #header .search-form {
   position: absolute;
@@ -350,7 +347,6 @@
 #header-inner {
   background-color: #fff;
   color: #031424;
-  padding: 0;
   height: 100%;
   box-sizing: border-box;
   padding: 0 30px;
@@ -377,9 +373,6 @@
   width: 105px;
   float: left;
   padding-top: 4px;
-}
-#header-inner.fixed .search-form {
-  display: none !important;
 }
 #header-inner.fixed #hnavi {
   position: relative;

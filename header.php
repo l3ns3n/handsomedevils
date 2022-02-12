@@ -10,7 +10,7 @@
 <div id="page">
 
 <header id="header-top">
-	<div class="wrapper align-right">
+	<div class="wrapper">
         <div class="header-top--wrapper">
             <div class="header-top--logo-container">
 				<?php if(get_theme_mod("lm_customizer_setting_logo_image")) {
